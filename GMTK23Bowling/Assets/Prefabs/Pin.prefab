@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3915e0de2fe853b4bbbafafe9534e9e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,9 +99,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 0.1
+  m_Mass: 10
+  m_LinearDrag: 18
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 73882c293ea5a204ab40309ea2b1ce87, type: 2}
   m_Interpolate: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c885e746acd43eb499a7df569ac8baf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 3
+  force: 200
   bounceCooldown: 0
   bounceCooldownMax: 0.2
 --- !u!61 &573290991402021561

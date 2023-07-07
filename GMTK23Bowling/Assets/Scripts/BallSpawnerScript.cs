@@ -11,11 +11,14 @@ public class BallSpawnerScript : MonoBehaviour
     [SerializeField] float cooldownRemain = 2f;
     [SerializeField] float cooldownMax = 2f;
 
+    float baseMin;
+    float baseMax;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        baseMin = minForce;
+        baseMax = maxForce;
     }
 
     // Update is called once per frame
@@ -40,7 +43,8 @@ public class BallSpawnerScript : MonoBehaviour
 
     public void Reset()
     {
-
-
+        minForce = baseMin;
+        maxForce = baseMax;
+        cooldownRemain = cooldownMax;
     }
 }

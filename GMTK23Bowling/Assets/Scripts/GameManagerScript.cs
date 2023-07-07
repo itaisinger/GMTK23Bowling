@@ -34,7 +34,9 @@ public class GameManagerScript : MonoBehaviour
         //create pins
         for(var i=0; i < 10; i++)
         {
-            Instantiate(pinPrefab,pinStartingPositions[i]);
+            var pin = Instantiate(pinPrefab);
+            pin.transform.position = pinStartingPositions[i].position;
+            Debug.Log("Pin created");
         }
 
         ballSpawner.Reset();
