@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - End
   - Start
+  - Pin
   layers:
   - Default
   - TransparentFX
