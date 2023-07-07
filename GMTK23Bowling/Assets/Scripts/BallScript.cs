@@ -22,7 +22,6 @@ public class BallScript : MonoBehaviour
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
-        Generate();
     }   
 
     // Update is called once per frame
@@ -41,23 +40,7 @@ public class BallScript : MonoBehaviour
     {
         if(wall.transform.tag == "Wall" && bounceCooldown <= 0f)
         {
-            Debug.Log("Bounce");
-
-            /*
-            if going right
-                
-            if going left
-
-            */
-            // if(angle > 270)
-            //     angle -= 180;
-            // else    
-            //     angle += 90;
             angleDegrees *= -1;
-            // float mag = myBody.velocity.magnitude;
-            // var direction = Vector3.Reflect(myBody.velocity.normalized, wall.contacts[0].normal);
-            // myBody.velocity = direction * Mathf.Max(mag, 0f);
-
             bounceCooldown = bounceCooldownMax;
         }
     }
@@ -66,15 +49,16 @@ public class BallScript : MonoBehaviour
     {
         if(col.tag == "End")
         {
-            transform.position = startPos.position;
-            Generate();
+            // transform.position = startPos.position;
+            // Generate();
+            Destroy(gameObject);
         }
     }
 
-    void Generate()
+    public void Generate(float min,float max)
     {
         angleDegrees = Random.Range(minAngle,maxAngle);
-        speed = Random.Range(minForce,maxForce);
+        speed = Random.Range(min,max);
     }
 
 }

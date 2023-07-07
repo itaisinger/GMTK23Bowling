@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - End
   - Start
+  - Pin
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1858521977
+    locked: 0
+  - name: walls
+    uniqueID: 2566355687
+    locked: 0
+  - name: objects
+    uniqueID: 4215757727
     locked: 0
