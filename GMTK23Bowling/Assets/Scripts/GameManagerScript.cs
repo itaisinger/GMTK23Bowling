@@ -6,6 +6,7 @@ public class GameManagerScript : MonoBehaviour
 {
     [SerializeField] Transform[] pinStartingPositions = new Transform[10];
     [SerializeField] GameObject pinPrefab;
+    [SerializeField] BallSpawnerScript ballSpawner;
     [SerializeField] int pinsRemainNum = 10;
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class GameManagerScript : MonoBehaviour
             Instantiate(pinPrefab,pinStartingPositions[i]);
         }
 
+        ballSpawner.Reset();
     }
 
     private void GameOver()

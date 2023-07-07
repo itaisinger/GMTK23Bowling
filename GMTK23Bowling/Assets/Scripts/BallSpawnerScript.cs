@@ -38,9 +38,9 @@ public class BallSpawnerScript : MonoBehaviour
         maxForce += 1.2f;
     }
 
-    public Reset()
+    public void Reset()
     {
 
-        
+
     }
 }
