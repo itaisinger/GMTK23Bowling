@@ -8,12 +8,12 @@ public class PinScript : MonoBehaviour
     public float force;
     [SerializeField] float bounceCooldown = 0f;
     [SerializeField] float bounceCooldownMax = 0.1f;
-    //GamemManagerScript gameManagerScript;
+    GameManagerScript gameManagerScript;
 
     void Start()
     {
       rb=GetComponent<Rigidbody2D>();
-      //gameManagerScript = FindObjectOfType<GameManagerScript>;
+      gameManagerScript = FindObjectOfType<GameManagerScript>();
     }
     void Update()
     {
@@ -30,12 +30,13 @@ public class PinScript : MonoBehaviour
          bounceCooldown = bounceCooldownMax;
         }    
       }
-      private void OnCollisionEnter2D(Collision2D other) {
+      private void OnCollisionEnter2D(Collision2D other) 
+      {
         if(other.gameObject.CompareTag("Ball"))
         {
-            //gameManagerScript.PinDown();
-            Destroy(this.gameObject);
+          gameManagerScript.PinDown();
+          Destroy(this.gameObject);
         }
+          
       }
 }
-      
