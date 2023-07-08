@@ -15,13 +15,16 @@ public class BallScript : MonoBehaviour
     [SerializeField] float bounceCooldownMax = 0.1f;
     [SerializeField] Transform startPos;
     [SerializeField] AudioSource bounceSfx;
+    [SerializeField] Transform shadowTransform;
 
+    Quaternion initRot;
     Rigidbody2D myBody;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        initRot = transform.rotation;
         myBody = GetComponent<Rigidbody2D>();
     }   
 
@@ -33,7 +36,10 @@ public class BallScript : MonoBehaviour
         myBody.velocity = dir*speed;
 
         if(bounceCooldown > 0f)
-            bounceCooldown -= Time.deltaTime;   
+            bounceCooldown -= Time.deltaTime; 
+
+        //disable shadow turn
+        shadowTransform.rotation = initRot;  
     }
 
     //bounce
