@@ -11,10 +11,20 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] AudioSource pinSfx;
     public List<GameObject> pins = new List<GameObject>();
+    private bool gameOver = false;
+
     private void Awake() 
     {
         Application.targetFrameRate = 60;
         StartGame();
+    }
+
+    private void Update()
+    {
+        if(gameOver && Input.anyKey)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void PinDown(GameObject pin)
@@ -39,6 +49,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void GameOver()
     {
+        gameOver = true;
         ballSpawner.enabled = false;
         gameOverPanel.SetActive(true);
         gameOverPanel.GetComponent<Animation>().Play("Lost");
