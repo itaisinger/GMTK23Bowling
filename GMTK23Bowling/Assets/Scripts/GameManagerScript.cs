@@ -13,10 +13,14 @@ public class GameManagerScript : MonoBehaviour
 
     [Header("UI")] 
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
+    [SerializeField] TMPro.TextMeshProUGUI highScoreText;
     [SerializeField] TMPro.TextMeshProUGUI pinsText;
 
-    [Header("")] 
-    [SerializeField] int score=0;
+    [Header("Score")] 
+    [SerializeField] int currentScore=0;
+    [SerializeField] int highScore=0;
+    protected float Timer;
+    public ScoreSaver scoreSaver;
     
     public List<GameObject> pins = new List<GameObject>();
     private bool gameOver = false;
@@ -24,6 +28,7 @@ public class GameManagerScript : MonoBehaviour
     private void Awake() 
     {
         Application.targetFrameRate = 60;
+        highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);   
         StartGame();
     }
 
@@ -33,10 +38,16 @@ public class GameManagerScript : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+        Timer += Time.deltaTime;
 
-        //update ui
-        pinsText.text = pins.Count.ToString();
-        scoreText.text = score.ToString();
+		if (Timer >= 1)
+		{
+
+			Timer = 0f;
+			currentScore= currentScore+pins.Count;
+            scoreText.SetText("SCORE: "+ currentScore.ToString());
+            pinsText.SetText("+"+pins.Count.ToString());
+		}
     }
 
     public void PinDown(GameObject pin)
@@ -65,5 +76,10 @@ public class GameManagerScript : MonoBehaviour
         ballSpawner.enabled = false;
         gameOverPanel.SetActive(true);
         gameOverPanel.GetComponent<Animation>().Play("Lost");
+        if(currentScore>scoreSaver.highScore)
+        {
+            scoreSaver.highScore= currentScore;
+            highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);         
+        }
     } 
 }

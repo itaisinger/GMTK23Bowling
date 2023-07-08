@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallSpawnerScript : MonoBehaviour
 {
-    [SerializeField] List<GameObject> ballPrefabs = new List<GameObject>();
+    [SerializeField] GameObject ballPrefabs;
     [SerializeField] Transform startPos;
     [SerializeField] float minForce = 20;
     [SerializeField] float maxForce = 100;
@@ -36,8 +36,8 @@ public class BallSpawnerScript : MonoBehaviour
     }
 
     public void SpawnBall()
-    {
-        var ball = Instantiate(ballPrefab,startPos);
+    { 
+        var ball = Instantiate(ballPrefabs,startPos);
         ball.GetComponent<BallScript>().Generate(minForce,maxForce);
 
         minForce += 1f;
