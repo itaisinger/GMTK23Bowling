@@ -24,7 +24,8 @@ public class MouseContoller : MonoBehaviour
         //start push animation
         if(Input.GetMouseButtonDown(0))
         {
-            anim.Play(PlayMode.StopAll);
+            anim.Rewind();
+            anim.Play();
         }
     }
 

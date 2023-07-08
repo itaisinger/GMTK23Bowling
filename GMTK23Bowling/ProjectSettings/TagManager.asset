@@ -53,6 +53,9 @@ TagManager:
   - name: walls
     uniqueID: 2566355687
     locked: 0
+  - name: shadows
+    uniqueID: 1324595813
+    locked: 0
   - name: objects
     uniqueID: 4215757727
     locked: 0
