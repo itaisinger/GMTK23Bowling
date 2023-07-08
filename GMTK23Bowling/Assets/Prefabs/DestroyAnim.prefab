@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 577189914179099899}
   - component: {fileID: 5791701345625528184}
-  - component: {fileID: 4255382099293161063}
   - component: {fileID: 8742453809502778798}
+  - component: {fileID: 466682944}
   m_Layer: 0
   m_Name: DestroyAnim
   m_TagString: Untagged
@@ -86,26 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4255382099293161063
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6140628528043721334}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 56c972d7b89573548af3d85a608668ba, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &8742453809502778798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,3 +98,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fe78c6ad8ef164ab8437b3f22c77b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &466682944
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6140628528043721334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84066ad9a0945c64c85074a56e96bc11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
