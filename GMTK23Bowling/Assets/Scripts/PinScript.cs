@@ -48,7 +48,12 @@ public class PinScript : MonoBehaviour
           // Vector2 targetDir = transform.position - other.gameObject.GetComponent<Transform>().position;
           // rb.AddForce(targetDir*force,ForceMode2D.Impulse);
           // bounceCooldown = bounceCooldownMax;
-      }    
+      }  
+      if(other.gameObject.CompareTag("Ball"))
+      {
+          gameManagerScript.PinDown();
+          Destroy(this.gameObject);
+      }  
     }
 
     //die
