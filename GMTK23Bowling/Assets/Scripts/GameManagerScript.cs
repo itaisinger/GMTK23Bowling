@@ -7,7 +7,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Transform[] pinStartingPositions = new Transform[10];
     [SerializeField] GameObject pinPrefab;
     [SerializeField] BallSpawnerScript ballSpawner;
-    [SerializeField] int pinsRemainNum = 11;
+    [SerializeField] int pinsRemainNum = 0;
     [SerializeField]GameObject panel;
 
 
@@ -42,6 +42,7 @@ public class GameManagerScript : MonoBehaviour
         //create pins
         for(var i=0; i < 10; i++)
         {
+            pinsRemainNum++;
             var pin = Instantiate(pinPrefab);
             pin.transform.position = pinStartingPositions[i].position;
         }
