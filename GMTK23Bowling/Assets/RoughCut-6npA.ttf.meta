@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a27dc3fcdff32d04fabaef87e2c4371a
+guid: 7bb0fc1c7b115f64480b9ee599b9c731
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Pixel Gaming
+  - Rough cut
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
