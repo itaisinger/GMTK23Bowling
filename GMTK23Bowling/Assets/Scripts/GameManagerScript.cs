@@ -11,7 +11,6 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] AudioSource pinSfx;
     public List<GameObject> pins = new List<GameObject>();
-
     private void Awake() 
     {
         Application.targetFrameRate = 60;
@@ -42,5 +41,6 @@ public class GameManagerScript : MonoBehaviour
     {
         ballSpawner.enabled = false;
         gameOverPanel.SetActive(true);
+        gameOverPanel.GetComponent<Animation>().Play("Lost");
     } 
 }
