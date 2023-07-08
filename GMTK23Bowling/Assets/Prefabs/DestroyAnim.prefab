@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5791701345625528184}
   - component: {fileID: 8742453809502778798}
   - component: {fileID: 466682944}
+  - component: {fileID: -3398588266572803682}
   m_Layer: 0
   m_Name: DestroyAnim
   m_TagString: Untagged
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -79209569
+  m_SortingLayer: 5
   m_SortingOrder: 10
   m_Sprite: {fileID: 1177736814, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,3 +119,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-3398588266572803682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6140628528043721334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aafacf5a69572540860434816b15d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  z: 0

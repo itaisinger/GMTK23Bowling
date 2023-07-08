@@ -39,21 +39,6 @@ public class PinScript : MonoBehaviour
 
         rb.AddForce(vec);
       }
-
-      //SCARPPED!
-      return;
-      if(other.gameObject.CompareTag("Player")&& bounceCooldown <= 0f)
-      {
-          //niv code
-          // Vector2 targetDir = transform.position - other.gameObject.GetComponent<Transform>().position;
-          // rb.AddForce(targetDir*force,ForceMode2D.Impulse);
-          // bounceCooldown = bounceCooldownMax;
-      }  
-      if(other.gameObject.CompareTag("Ball"))
-      {
-          gameManagerScript.PinDown(this.gameObject);
-          Destroy(this.gameObject);
-      }  
     }
 
     //die
@@ -64,7 +49,15 @@ public class PinScript : MonoBehaviour
           gameManagerScript.PinDown(this.gameObject);
           Instantiate(explosionFX,transform.position,explosionFX.transform.rotation);
           Destroy(this.gameObject);
-      }
-        
+      } 
+    }
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+      if(other.gameObject.CompareTag("Ball"))
+      {
+          gameManagerScript.PinDown(this.gameObject);
+          Instantiate(explosionFX,transform.position,explosionFX.transform.rotation);
+          Destroy(this.gameObject);
+      } 
     }
 }
