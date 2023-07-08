@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 1697858450}
   - component: {fileID: 1697858449}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: pinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4202,6 +4202,10 @@ PrefabInstance:
       propertyPath: panel
       value: 
       objectReference: {fileID: 2070784602}
+    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
+      propertyPath: pinText
+      value: 
+      objectReference: {fileID: 1697858449}
     - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
       propertyPath: pinsText
       value: 

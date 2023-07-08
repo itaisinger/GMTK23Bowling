@@ -23,6 +23,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] int highScore=0;
 
     protected float Timer;
+     protected float fixedTimer;
     private float levelTimer = 0f;
     public ScoreSaver scoreSaver;
     
@@ -49,17 +50,19 @@ public class GameManagerScript : MonoBehaviour
 
         //timer and score
         Timer += Time.deltaTime;
-        double timeCon =Convert.ToDouble(Timer*1000);
+        fixedTimer += Time.deltaTime;
+        double timeCon =Convert.ToDouble(fixedTimer*1000);
         TimeSpan time = TimeSpan.FromMilliseconds(timeCon);
-        string displayTime = time.ToString("ss':'ff");
+        string displayTime = time.ToString("mm':'ss':'ff");
         timeText.SetText(displayTime);
+        pinText.SetText(pins.Count.ToString()+" X");
 
         //add score
 		if (Timer >= 1f)
 		{
 			Timer = 0f;
 			currentScore= currentScore+pins.Count;
-            scoreText.SetText("SCORE: "+ currentScore.ToString());
+            scoreText.SetText("SCORE: "+currentScore.ToString());
             plusText.SetText("+"+pins.Count.ToString());
 		}
 
