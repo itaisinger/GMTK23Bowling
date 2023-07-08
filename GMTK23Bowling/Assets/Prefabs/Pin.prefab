@@ -126,7 +126,7 @@ MonoBehaviour:
   force: 60000
   bounceCooldown: 0
   bounceCooldownMax: 0.2
-  explosionFX: {fileID: 1101617302406420715, guid: a233a2b4e3ed0ca46b8d0220ea25b825, type: 3}
+  explosionFX: {fileID: 6140628528043721334, guid: 1f7e6518432bb03448c734bf8d21e50e, type: 3}
 --- !u!61 &573290991402021561
 BoxCollider2D:
   m_ObjectHideFlags: 0
