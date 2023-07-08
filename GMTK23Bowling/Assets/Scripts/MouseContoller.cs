@@ -42,10 +42,13 @@ public class MouseContoller : MonoBehaviour
             var to = new Vector2(pinPos.x, pinPos.y);
 
             float dis = Vector2.Distance(from, to);
+            float disMult = Mathf.Clamp(1/dis, 0.4f, 1f);
             float dirDegrees = FindDegree(to - from);
             float dirRadians = dirDegrees * Mathf.Deg2Rad;
-            Vector2 vec = (1/1) * pinScript.force * new Vector2(Mathf.Sin(dirRadians), Mathf.Cos(dirRadians));
+            Vector2 vec = disMult * pinScript.force * new Vector2(Mathf.Sin(dirRadians), Mathf.Cos(dirRadians));
             pinBody.AddForce(vec);
+            
+            Debug.Log(disMult);
         }
     }
 
