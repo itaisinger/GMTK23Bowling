@@ -11,73 +11,16 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] int pinsRemainNum = 0;
     [SerializeField]GameObject gameOverPanel;
     public List<GameObject> pins = new List<GameObject>();
-    GAME_STATES state;
-
-    [Header("SFX")]
-    [SerializeField] AudioSource menuOst;
-    [SerializeField] AudioSource gameOst;
-    [SerializeField] AudioSource pinSfx;
-
-    enum GAME_STATES{
-        menu,
-        game,
-        gameOver,
-    }
 
     private void Awake() 
     {
         Application.targetFrameRate = 60;
+        StartGame();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        state = GAME_STATES.menu;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        switch(state)
-        {
-            case GAME_STATES.menu:
-                if(Input.anyKey)
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-                    StartGame();
-                }
-
-                //ost
-                menuOst.volume = Mathf.MoveTowards(menuOst.volume, 1, 1 * Time.deltaTime);
-                gameOst.volume = Mathf.MoveTowards(gameOst.volume, 0, 1 * Time.deltaTime);
-
-            break;
-
-            ////////////
-
-            case GAME_STATES.game:
-
-                //ost
-                menuOst.volume = Mathf.MoveTowards(menuOst.volume, 0, 1 * Time.deltaTime);
-                gameOst.volume = Mathf.MoveTowards(gameOst.volume, 1, 1 * Time.deltaTime);
-
-            break;
-
-            ////////////
-
-            case GAME_STATES.gameOver:
-
-                if(Input.anyKey)
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
-                }
-            break;
-
-            ////////////
-
-
-        }
-
     }
 
     public void PinDown(GameObject pin)
@@ -98,17 +41,10 @@ public class GameManagerScript : MonoBehaviour
             pin.transform.position = pinStartingPositions[i].position;
             pins.Add(pin);
         }
-
-        //ost
-        menuOst.Play();
-        gameOst.Play();
-
-        state = GAME_STATES.game;
     }
 
     private void GameOver()
     {
-        state = GAME_STATES.gameOver;
         ballSpawner.enabled = false;
         gameOverPanel.SetActive(true);
     } 
