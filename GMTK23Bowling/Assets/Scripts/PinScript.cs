@@ -8,6 +8,7 @@ public class PinScript : MonoBehaviour
     public float force;
     [SerializeField] float bounceCooldown = 0f;
     [SerializeField] float bounceCooldownMax = 0.1f;
+    [SerializeField] GameObject explosionFX;
     GameManagerScript gameManagerScript;
 
     void Start()
@@ -61,6 +62,8 @@ public class PinScript : MonoBehaviour
       if(other.gameObject.CompareTag("Ball"))
       {
           gameManagerScript.PinDown(this.gameObject);
+          // Instantiate(explosionFX);
+          // explosionFX.transform.position = transform.position;
           Destroy(this.gameObject);
       }
         

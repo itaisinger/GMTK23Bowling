@@ -103,7 +103,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 18
+  m_LinearDrag: 15
   m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 73882c293ea5a204ab40309ea2b1ce87, type: 2}
@@ -123,9 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c885e746acd43eb499a7df569ac8baf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 40000
+  force: 60000
   bounceCooldown: 0
   bounceCooldownMax: 0.2
+  explosionFX: {fileID: 1101617302406420715, guid: a233a2b4e3ed0ca46b8d0220ea25b825, type: 3}
 --- !u!61 &573290991402021561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,9 +194,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786517190233476640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.51, y: 0.88, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.016, y: 0, z: 0}
+  m_LocalScale: {x: 2.42, y: 1.4103312, z: 1.6026491}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 573290991402021509}
   m_RootOrder: 0
@@ -238,11 +239,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -79209569
+  m_SortingLayerID: 1324595813
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6901961}
+  m_Sprite: {fileID: 21300000, guid: 81d5acb94d0b4dd45ab216571bed3dc1, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -262,6 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411506198184794901}
   - component: {fileID: 5816711320692860627}
+  - component: {fileID: 782171628467127119}
   m_Layer: 0
   m_Name: pinSprite
   m_TagString: Untagged
@@ -323,7 +325,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -79209569
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3915e0de2fe853b4bbbafafe9534e9e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -336,3 +338,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &782171628467127119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897387997411716087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aafacf5a69572540860434816b15d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  z: 0

@@ -5,6 +5,12 @@ using UnityEngine;
 public class MouseContoller : MonoBehaviour
 {
     [SerializeField] Dictionary<GameObject,bool> collisions = new Dictionary<GameObject, bool>();     
+    Animation anim;
+
+    void Awake()
+    {
+        anim = GetComponent<Animation>();
+    }
 
     void FixedUpdate()
     {
@@ -15,26 +21,34 @@ public class MouseContoller : MonoBehaviour
 
     void Update()
     {   
-        //push!
+        //start push animation
         if(Input.GetMouseButtonDown(0))
         {
-            // Debug.Log(collisions.Count);
+            anim.Rewind();
+            anim.Play();
+        }
+    }
 
-            foreach (var pin in collisions)
-            {
-                Vector3 pinPos = pin.Key.transform.position;
-                PinScript pinScript = pin.Key.GetComponent<PinScript>();
-                Rigidbody2D pinBody = pin.Key.GetComponent<Rigidbody2D>();
+    //push called from the animation event
+    public void Push()
+    {
+        foreach (var pin in collisions)
+        {
+            Vector3 pinPos = pin.Key.transform.position;
+            PinScript pinScript = pin.Key.GetComponent<PinScript>();
+            Rigidbody2D pinBody = pin.Key.GetComponent<Rigidbody2D>();
 
-                var from = new Vector2(transform.position.x, transform.position.y);
-                var to = new Vector2(pinPos.x, pinPos.y);
+            var from = new Vector2(transform.position.x, transform.position.y);
+            var to = new Vector2(pinPos.x, pinPos.y);
 
-                float dis = Vector2.Distance(from, to);
-                float dirDegrees = FindDegree(to - from);
-                float dirRadians = dirDegrees * Mathf.Deg2Rad;
-                Vector2 vec = (1/1) * pinScript.force * new Vector2(Mathf.Sin(dirRadians), Mathf.Cos(dirRadians));
-                pinBody.AddForce(vec);
-            }
+            float dis = Vector2.Distance(from, to);
+            float disMult = Mathf.Clamp(1/dis, 0.4f, 1f);
+            float dirDegrees = FindDegree(to - from);
+            float dirRadians = dirDegrees * Mathf.Deg2Rad;
+            Vector2 vec = disMult * pinScript.force * new Vector2(Mathf.Sin(dirRadians), Mathf.Cos(dirRadians));
+            pinBody.AddForce(vec);
+            
+            Debug.Log(disMult);
         }
     }
 
