@@ -59,6 +59,7 @@ public class BallScript : MonoBehaviour
     {
         angleDegrees = Random.Range(minAngle,maxAngle);
         speed = Random.Range(min,max);
+        Debug.Log(speed);
     }
 
 }
