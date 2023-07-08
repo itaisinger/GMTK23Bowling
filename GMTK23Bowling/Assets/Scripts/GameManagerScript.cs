@@ -21,37 +21,55 @@ public class GameManagerScript : MonoBehaviour
     [Header("Score")] 
     [SerializeField] int currentScore=0;
     [SerializeField] int highScore=0;
+
     protected float Timer;
+    private float levelTimer = 0f;
     public ScoreSaver scoreSaver;
     
+    private float gameOverTimer = 4.5f;
     public List<GameObject> pins = new List<GameObject>();
     private bool gameOver = false;
 
     private void Awake() 
     {
         Application.targetFrameRate = 60;
-        highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);
+        highScoreText.SetText("HIGH SCORE: " + scoreSaver.highScore);
         StartGame();
     }
 
     private void Update()
-    {
-        if(gameOver && Input.anyKey)
+    {   
+        //return to main menu
+        if(gameOver)
         {
-            SceneManager.LoadScene(0);
+            gameOverTimer -= Time.deltaTime;
+            if(Input.anyKey && gameOverTimer <= 0f)
+                SceneManager.LoadScene(1);
         }
+
+        //timer and score
         Timer += Time.deltaTime;
         double timeCon =Convert.ToDouble(Timer*1000);
         TimeSpan time = TimeSpan.FromMilliseconds(timeCon);
         string displayTime = time.ToString("ss':'ff");
         timeText.SetText(displayTime);
-		if (Timer >= 1)
+
+        //add score
+		if (Timer >= 1f)
 		{
 			Timer = 0f;
 			currentScore= currentScore+pins.Count;
             scoreText.SetText("SCORE: "+ currentScore.ToString());
             plusText.SetText("+"+pins.Count.ToString());
 		}
+
+        //level up
+        levelTimer += Time.deltaTime;
+        if(levelTimer >= 10f)
+        {
+            levelTimer = 0f;
+            ballSpawner.LevelUp();
+        }
     }
 
     public void PinDown(GameObject pin)
@@ -65,6 +83,8 @@ public class GameManagerScript : MonoBehaviour
     private void StartGame()
     {
         Debug.Log("Starting game");
+        // levelTimer = 4f;
+
         //create pins
         for(var i=0; i < 10; i++)
         {
