@@ -27,7 +27,6 @@ public class PinScript : MonoBehaviour
     //pushback
     private void OnTriggerStay2D(Collider2D other) 
     {
-
       if(other.tag == "PushBack")
       {
         float baseForce = other.GetComponent<PushBackScript>().force;

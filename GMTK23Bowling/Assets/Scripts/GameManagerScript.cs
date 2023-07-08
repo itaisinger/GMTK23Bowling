@@ -9,28 +9,75 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject pinPrefab;
     [SerializeField] BallSpawnerScript ballSpawner;
     [SerializeField] int pinsRemainNum = 0;
-    [SerializeField]GameObject panel;
+    [SerializeField]GameObject gameOverPanel;
     public List<GameObject> pins = new List<GameObject>();
+    GAME_STATES state;
 
-private void Awake() {
-    Application.targetFrameRate = 60;
-}
+    [Header("SFX")]
+    [SerializeField] AudioSource menuOst;
+    [SerializeField] AudioSource gameOst;
+    [SerializeField] AudioSource pinSfx;
+
+    enum GAME_STATES{
+        menu,
+        game,
+        gameOver,
+    }
+
+    private void Awake() 
+    {
+        Application.targetFrameRate = 60;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        StartGame();
+        state = GAME_STATES.menu;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(panel.activeInHierarchy)
+        switch(state)
         {
-            if(Input.anyKey)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
+            case GAME_STATES.menu:
+                if(Input.anyKey)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+                    StartGame();
+                }
+
+                //ost
+                menuOst.volume = Mathf.MoveTowards(menuOst.volume, 1, 1 * Time.deltaTime);
+                gameOst.volume = Mathf.MoveTowards(gameOst.volume, 0, 1 * Time.deltaTime);
+
+            break;
+
+            ////////////
+
+            case GAME_STATES.game:
+
+                //ost
+                menuOst.volume = Mathf.MoveTowards(menuOst.volume, 0, 1 * Time.deltaTime);
+                gameOst.volume = Mathf.MoveTowards(gameOst.volume, 1, 1 * Time.deltaTime);
+
+            break;
+
+            ////////////
+
+            case GAME_STATES.gameOver:
+
+                if(Input.anyKey)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+                }
+            break;
+
+            ////////////
+
+
         }
+
     }
 
     public void PinDown(GameObject pin)
@@ -51,11 +98,18 @@ private void Awake() {
             pin.transform.position = pinStartingPositions[i].position;
             pins.Add(pin);
         }
+
+        //ost
+        menuOst.Play();
+        gameOst.Play();
+
+        state = GAME_STATES.game;
     }
 
     private void GameOver()
     {
-        ballSpawner.enabled= false;
-        panel.SetActive(true);
+        state = GAME_STATES.gameOver;
+        ballSpawner.enabled = false;
+        gameOverPanel.SetActive(true);
     } 
 }
