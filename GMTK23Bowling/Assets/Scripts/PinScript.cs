@@ -62,8 +62,7 @@ public class PinScript : MonoBehaviour
       if(other.gameObject.CompareTag("Ball"))
       {
           gameManagerScript.PinDown(this.gameObject);
-          // Instantiate(explosionFX);
-          // explosionFX.transform.position = transform.position;
+          Instantiate(explosionFX,transform.position,explosionFX.transform.rotation);
           Destroy(this.gameObject);
       }
         
