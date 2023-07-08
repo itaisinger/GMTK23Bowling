@@ -37,7 +37,8 @@ public class BallSpawnerScript : MonoBehaviour
 
     public void SpawnBall()
     {
-        var ball = Instantiate(ballPrefab,startPos);
+        var ball = Instantiate(ballPrefabs[0]);
+        ball.transform.position = startPos.position;
         ball.GetComponent<BallScript>().Generate(minForce,maxForce);
 
         minForce += 1f;

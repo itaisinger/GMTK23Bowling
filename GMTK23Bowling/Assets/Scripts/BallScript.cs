@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float angleRadians;
-    [SerializeField] float angleDegrees;
+    float speed;
+    float angleRadians;
+    float angleDegrees;
     [SerializeField] float forceMult = 1;
     [SerializeField] float minAngle = 0;
     [SerializeField] float maxAngle = 360;

@@ -44,9 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8072080e6994d654783c9c90a2181f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 3171795990870646342, guid: 7201cabdcf6725c40848a8030f7450d1, type: 3}
+  ballPrefabs:
+  - {fileID: 3171795990870646342, guid: 7201cabdcf6725c40848a8030f7450d1, type: 3}
+  - {fileID: 9139329938891337848, guid: 2c40e7bff9ddad340bfac3a5ebee413e, type: 3}
+  - {fileID: 9139329938891337848, guid: aaf9ca997a2927040812c16a8993b4c4, type: 3}
   startPos: {fileID: 0}
   minForce: 5
   maxForce: 10
   cooldownRemain: 2
   cooldownMax: 4
+  startCooldown: 4
+  level: 1
