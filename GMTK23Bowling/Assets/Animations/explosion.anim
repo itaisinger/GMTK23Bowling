@@ -48,7 +48,7 @@ AnimationClip:
     - time: 0.3
       value: {fileID: 796474032, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - time: 0.31666666
-      value: {fileID: -1195246264, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
+      value: {fileID: -835575180, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - time: 0.33333334
       value: {fileID: -835575180, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - time: 0.36666667
@@ -142,7 +142,7 @@ AnimationClip:
     - {fileID: 1990168928, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - {fileID: 1352524633, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - {fileID: 796474032, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
-    - {fileID: -1195246264, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
+    - {fileID: -835575180, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - {fileID: -835575180, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - {fileID: 300504535, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
     - {fileID: 862051924, guid: c9c83d188705a8a42b299d599eacae57, type: 3}
@@ -197,4 +197,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 1
+    functionName: DestoryPin
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

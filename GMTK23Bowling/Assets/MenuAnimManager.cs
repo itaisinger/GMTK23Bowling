@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuAnimManager : MonoBehaviour
 {
+    private void Update() {
+        if(Input.anyKey)
+        {
+            GetComponent<Animator>().SetTrigger("Trigger");
+        }
+    }
       public List<GameObject> toDestroy = new List<GameObject>();
       private void Awake() 
       {
@@ -21,5 +27,9 @@ public class MenuAnimManager : MonoBehaviour
   public void DesGameObj()
   {
     Destroy(gameObject);
+  }
+  private void InvkedChange()
+  {
+    
   }
 }
