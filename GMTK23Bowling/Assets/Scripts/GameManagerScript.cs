@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,7 +14,9 @@ public class GameManagerScript : MonoBehaviour
     [Header("UI")] 
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
     [SerializeField] TMPro.TextMeshProUGUI highScoreText;
-    [SerializeField] TMPro.TextMeshProUGUI pinsText;
+    [SerializeField] TMPro.TextMeshProUGUI plusText;
+    [SerializeField]TMPro.TextMeshProUGUI pinText;
+    [SerializeField]TMPro.TextMeshProUGUI timeText;
 
     [Header("Score")] 
     [SerializeField] int currentScore=0;
@@ -28,7 +30,7 @@ public class GameManagerScript : MonoBehaviour
     private void Awake() 
     {
         Application.targetFrameRate = 60;
-        highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);   
+        highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);
         StartGame();
     }
 
@@ -39,14 +41,16 @@ public class GameManagerScript : MonoBehaviour
             SceneManager.LoadScene(0);
         }
         Timer += Time.deltaTime;
-
+        double timeCon =Convert.ToDouble(Timer*1000);
+        TimeSpan time = TimeSpan.FromMilliseconds(timeCon);
+        string displayTime = time.ToString("ss':'ff");
+        timeText.SetText(displayTime);
 		if (Timer >= 1)
 		{
-
 			Timer = 0f;
 			currentScore= currentScore+pins.Count;
             scoreText.SetText("SCORE: "+ currentScore.ToString());
-            pinsText.SetText("+"+pins.Count.ToString());
+            plusText.SetText("+"+pins.Count.ToString());
 		}
     }
 
@@ -79,7 +83,7 @@ public class GameManagerScript : MonoBehaviour
         if(currentScore>scoreSaver.highScore)
         {
             scoreSaver.highScore= currentScore;
-            highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);         
+            highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);       
         }
     } 
 }
