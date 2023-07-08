@@ -842,8 +842,8 @@ Canvas:
   m_GameObject: {fileID: 506595094}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
-  m_Camera: {fileID: 519420031}
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -851,7 +851,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1002292931
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &506595098
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 1697858450}
   - component: {fileID: 1697858449}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: pinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4199,6 +4199,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 2070784602}
+    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
+      propertyPath: pinText
+      value: 
+      objectReference: {fileID: 1697858449}
+    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
+      propertyPath: pinsText
+      value: 
+      objectReference: {fileID: 766049242}
+    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
       propertyPath: plusText
       value: 
       objectReference: {fileID: 766049242}
@@ -4210,6 +4222,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 279897347}
+    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
+      propertyPath: scoreSaver
+      value: 
+      objectReference: {fileID: 11400000, guid: fd4510120ccfd634db69d99fab915d80, type: 2}
     - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
       propertyPath: ballSpawner
       value: 
