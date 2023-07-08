@@ -10,6 +10,7 @@ TagManager:
   - Start
   - Pin
   - PushBack
+  - Ost
   layers:
   - Default
   - TransparentFX

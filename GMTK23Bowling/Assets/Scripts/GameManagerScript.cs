@@ -20,6 +20,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] int currentScore=0;
     [SerializeField] int highScore=0;
     protected float Timer;
+    protected float levelTimer = 0f;
+    private float gameOverTimer = 4.5f;
     public ScoreSaver scoreSaver;
     
     public List<GameObject> pins = new List<GameObject>();
@@ -34,20 +36,29 @@ public class GameManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if(gameOver && Input.anyKey)
+        if(gameOver)
         {
-            SceneManager.LoadScene(0);
+            gameOverTimer -= Time.deltaTime;
+            
+            if(Input.anyKey && gameOverTimer <= 0)
+                SceneManager.LoadScene(1);
         }
         Timer += Time.deltaTime;
+        levelTimer += Time.deltaTime;
 
 		if (Timer >= 1)
 		{
-
 			Timer = 0f;
 			currentScore= currentScore+pins.Count;
             scoreText.SetText("SCORE: "+ currentScore.ToString());
             pinsText.SetText("+"+pins.Count.ToString());
 		}
+
+        if(levelTimer >= 10)
+        {
+            ballSpawner.LevelUp();
+            levelTimer = 0f;
+        }
     }
 
     public void PinDown(GameObject pin)

@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class OstManager : MonoBehaviour
 {
-    GameManagerScript gameManagerScript;
 
     [SerializeField] AudioSource menuOst;
     [SerializeField] AudioSource gameOst;
 
     void Awake()
-    {
-        gameManagerScript=FindObjectOfType<GameManagerScript>();
+    {   
         DontDestroyOnLoad(gameObject);
+
+        menuOst.volume = 1f;
+        gameOst.volume = 0f;
+
     }
 
     void Update()
@@ -21,11 +23,10 @@ public class OstManager : MonoBehaviour
         switch(SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
-                if(Input.anyKey)
-                {
-                    
-                }
+                SceneManager.LoadScene(1);
+            break;
 
+            case 1:
                 menuOst.volume = Mathf.MoveTowards(menuOst.volume, 1, 1 * Time.deltaTime);
                 gameOst.volume = Mathf.MoveTowards(gameOst.volume, 0, 1 * Time.deltaTime);
 
@@ -33,7 +34,7 @@ public class OstManager : MonoBehaviour
 
             ////////////
 
-            case 1:
+            case 2:
 
                 menuOst.volume = Mathf.MoveTowards(menuOst.volume, 0, 1 * Time.deltaTime);
                 gameOst.volume = Mathf.MoveTowards(gameOst.volume, 1, 1 * Time.deltaTime);
