@@ -62,10 +62,10 @@ public class BallScript : MonoBehaviour
         }
     }
 
-    public void Generate(float min,float max)
+    public void Generate(float min,float max, float angleRange)
     {
-        angleDegrees = Random.Range(minAngle,maxAngle);
-        speed = Random.Range(min,max);
+        angleDegrees = Random.Range(180-angleRange, 180 + angleRange);
+        speed = forceMult * Random.Range(min,max);
         Debug.Log(speed);
     }
 
