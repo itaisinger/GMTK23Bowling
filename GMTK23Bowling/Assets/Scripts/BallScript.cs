@@ -14,6 +14,7 @@ public class BallScript : MonoBehaviour
     [SerializeField] float bounceCooldown = 0f;
     [SerializeField] float bounceCooldownMax = 0.1f;
     [SerializeField] Transform startPos;
+    [SerializeField] AudioSource bounceSfx;
 
     Rigidbody2D myBody;
 
@@ -42,6 +43,7 @@ public class BallScript : MonoBehaviour
         {
             angleDegrees *= -1;
             bounceCooldown = bounceCooldownMax;
+            bounceSfx.Play();
         }
     }
 
