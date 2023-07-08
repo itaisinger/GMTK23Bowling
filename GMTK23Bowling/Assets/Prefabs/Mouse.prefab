@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -79209569
-  m_SortingLayer: 4
+  m_SortingLayerID: 1324595813
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81d5acb94d0b4dd45ab216571bed3dc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5176471}
@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2587724525384172224}
   - component: {fileID: 6749439748673602834}
+  - component: {fileID: 1986685098}
   m_Layer: 0
   m_Name: hand
   m_TagString: Untagged
@@ -154,8 +155,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1541479393
-  m_SortingLayer: 6
+  m_SortingLayerID: -79209569
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: addfabada10809f469fc8c2f4a4ff6a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -168,6 +169,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1986685098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812292467887985191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aafacf5a69572540860434816b15d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  z: 0
 --- !u!1 &5108192062004265977
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 5108192062004265977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9, y: -2.36, z: 0.06979426}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2587724525384172224}
@@ -284,7 +298,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
 --- !u!111 &7577033766881736597
 Animation:
   m_ObjectHideFlags: 0
