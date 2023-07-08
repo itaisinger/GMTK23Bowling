@@ -23,7 +23,7 @@ public class OstManager : MonoBehaviour
             case 0:
                 if(Input.anyKey)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+                    SceneManager.LoadScene(1);
                 }
 
                 menuOst.volume = Mathf.MoveTowards(menuOst.volume, 1, 1 * Time.deltaTime);

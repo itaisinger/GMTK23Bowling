@@ -41,7 +41,7 @@ public class MouseContoller : MonoBehaviour
     //add pin to collision
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Pin")
+        if(col.tag == "Pin" && !collisions.ContainsKey(col.gameObject))
             collisions.Add(col.gameObject, true);
     }
     //remove pin from collisions
