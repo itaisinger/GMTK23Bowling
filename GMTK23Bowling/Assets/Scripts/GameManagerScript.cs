@@ -22,6 +22,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] int currentScore=0;
     [SerializeField] int highScore=0;
     protected float Timer;
+    protected float fixedTimer;
     public ScoreSaver scoreSaver;
     
     public List<GameObject> pins = new List<GameObject>();
@@ -41,9 +42,10 @@ public class GameManagerScript : MonoBehaviour
             SceneManager.LoadScene(0);
         }
         Timer += Time.deltaTime;
-        double timeCon =Convert.ToDouble(Timer*1000);
+        fixedTimer += Time.deltaTime;
+        double timeCon =Convert.ToDouble(fixedTimer*1000);
         TimeSpan time = TimeSpan.FromMilliseconds(timeCon);
-        string displayTime = time.ToString("ss':'ff");
+        string displayTime = time.ToString("mm':'ss':'ff");
         timeText.SetText(displayTime);
 		if (Timer >= 1)
 		{
