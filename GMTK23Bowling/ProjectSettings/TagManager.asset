@@ -56,3 +56,6 @@ TagManager:
   - name: objects
     uniqueID: 4215757727
     locked: 0
+  - name: vfx
+    uniqueID: 1941069193
+    locked: 0

@@ -8,8 +8,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Transform[] pinStartingPositions = new Transform[10];
     [SerializeField] GameObject pinPrefab;
     [SerializeField] BallSpawnerScript ballSpawner;
-    [SerializeField] int pinsRemainNum = 0;
-    [SerializeField]GameObject gameOverPanel;
+    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] AudioSource pinSfx;
     public List<GameObject> pins = new List<GameObject>();
 
     private void Awake() 
@@ -18,13 +18,9 @@ public class GameManagerScript : MonoBehaviour
         StartGame();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     public void PinDown(GameObject pin)
     {
+        pinSfx.Play();
         pins.Remove(pin);
         if(pins.Count <= 0)
             GameOver();
@@ -36,7 +32,6 @@ public class GameManagerScript : MonoBehaviour
         //create pins
         for(var i=0; i < 10; i++)
         {
-            pinsRemainNum++;
             var pin = Instantiate(pinPrefab);
             pin.transform.position = pinStartingPositions[i].position;
             pins.Add(pin);
