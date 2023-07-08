@@ -4199,14 +4199,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
-      propertyPath: panel
-      value: 
-      objectReference: {fileID: 2070784602}
-    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
-      propertyPath: pinsText
-      value: 
-      objectReference: {fileID: 766049242}
-    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
       propertyPath: plusText
       value: 
       objectReference: {fileID: 766049242}
@@ -4218,10 +4210,6 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 279897347}
-    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
-      propertyPath: scoreSaver
-      value: 
-      objectReference: {fileID: 11400000, guid: fd4510120ccfd634db69d99fab915d80, type: 2}
     - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
       propertyPath: ballSpawner
       value: 

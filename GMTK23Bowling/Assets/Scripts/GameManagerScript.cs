@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour
     
     private float gameOverTimer = 4.5f;
     public List<GameObject> pins = new List<GameObject>();
-    private bool gameOver = false;
+    public bool gameOver = false;
 
     private void Awake() 
     {

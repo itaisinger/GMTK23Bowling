@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 8016548784313173302}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,4 +188,13 @@ MonoBehaviour:
   ballSpawner: {fileID: 0}
   gameOverPanel: {fileID: 0}
   pinSfx: {fileID: 1280721782107113858}
+  scoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
+  plusText: {fileID: 0}
+  pinText: {fileID: 0}
+  timeText: {fileID: 0}
+  currentScore: 0
+  highScore: 0
+  scoreSaver: {fileID: 11400000, guid: fd4510120ccfd634db69d99fab915d80, type: 2}
   pins: []
+  gameOver: 0
