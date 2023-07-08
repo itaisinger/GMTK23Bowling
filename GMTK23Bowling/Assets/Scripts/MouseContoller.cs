@@ -48,7 +48,6 @@ public class MouseContoller : MonoBehaviour
             Vector2 vec = disMult * pinScript.force * new Vector2(Mathf.Sin(dirRadians), Mathf.Cos(dirRadians));
             pinBody.AddForce(vec);
             
-            Debug.Log(disMult);
         }
     }
 
