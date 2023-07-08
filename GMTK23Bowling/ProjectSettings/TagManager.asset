@@ -54,18 +54,15 @@ TagManager:
   - name: background
     uniqueID: 1858521977
     locked: 0
-  - name: walls
-    uniqueID: 2566355687
-    locked: 0
   - name: shadows
     uniqueID: 1324595813
     locked: 0
   - name: objects
     uniqueID: 4215757727
     locked: 0
-  - name: vfx
-    uniqueID: 1941069193
+  - name: ui
+    uniqueID: 1002292931
     locked: 0
-  - name: hand
-    uniqueID: 1541479393
+  - name: transition
+    uniqueID: 2905030507
     locked: 0
