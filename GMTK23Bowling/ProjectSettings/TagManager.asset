@@ -9,6 +9,7 @@ TagManager:
   - End
   - Start
   - Pin
+  - PushBack
   layers:
   - Default
   - TransparentFX
