@@ -12,9 +12,5 @@ public class CamMove : MonoBehaviour
     void Update()
     {
         transform.position=transform.position+new Vector3(speed/100,0,0);
-        if(Input.anyKey)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
     }
 }
