@@ -12,31 +12,42 @@ public class PinScript : MonoBehaviour
 
     void Start()
     {
-      rb=GetComponent<Rigidbody2D>();
+      rb = GetComponent<Rigidbody2D>();
       gameManagerScript = FindObjectOfType<GameManagerScript>();
     }
+
+
     void Update()
     {
-    
+        //bounce cooldown
         if(bounceCooldown > 0f)
             bounceCooldown -= Time.deltaTime;   
     }
+
     private void OnTriggerEnter2D(Collider2D other) 
     {
-    if(other.gameObject.CompareTag("Player")&& bounceCooldown <= 0f)
-        {
-        Vector2 targetDir = transform.position - other.gameObject.GetComponent<Transform>().position;
-        rb.AddForce(targetDir*force,ForceMode2D.Impulse);
-         bounceCooldown = bounceCooldownMax;
-        }    
-      }
-      private void OnCollisionEnter2D(Collision2D other) 
+      //SCARPPED!
+      return;
+      if(other.gameObject.CompareTag("Player")&& bounceCooldown <= 0f)
       {
-        if(other.gameObject.CompareTag("Ball"))
-        {
+          var mouseVector = other.gameObject.GetComponent<MouseContoller>().GetPushVector();
+          rb.AddForce(mouseVector*force,ForceMode2D.Impulse);
+          bounceCooldown = bounceCooldownMax;
+          Debug.Log("Force :" + mouseVector.ToString());
+          //niv code
+          // Vector2 targetDir = transform.position - other.gameObject.GetComponent<Transform>().position;
+          // rb.AddForce(targetDir*force,ForceMode2D.Impulse);
+          // bounceCooldown = bounceCooldownMax;
+      }    
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+      if(other.gameObject.CompareTag("Ball"))
+      {
           gameManagerScript.PinDown();
           Destroy(this.gameObject);
-        }
-          
       }
+        
+    }
 }

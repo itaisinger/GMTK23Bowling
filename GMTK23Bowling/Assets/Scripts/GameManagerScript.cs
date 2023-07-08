@@ -31,12 +31,12 @@ public class GameManagerScript : MonoBehaviour
 
     private void StartGame()
     {
+        Debug.Log("Starting game");
         //create pins
-        for(var i=0; i < 10; i++)
+        for(var i=0; i < 5; i++)
         {
             var pin = Instantiate(pinPrefab);
             pin.transform.position = pinStartingPositions[i].position;
-            Debug.Log("Pin created");
         }
 
         ballSpawner.Reset();
