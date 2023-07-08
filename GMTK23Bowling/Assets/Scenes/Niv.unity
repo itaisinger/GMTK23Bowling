@@ -3049,6 +3049,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 655742063251042341}
     - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 2070784602}
+    - target: {fileID: 8016548784313173302, guid: 253ea3fcf614fa64ca827a8a74b2424d, type: 3}
       propertyPath: pinStartingPositions.Array.data[0]
       value: 
       objectReference: {fileID: 1686703956}
