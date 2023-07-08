@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,14 +14,14 @@ public class GameManagerScript : MonoBehaviour
     [Header("UI")] 
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
     [SerializeField] TMPro.TextMeshProUGUI highScoreText;
-    [SerializeField] TMPro.TextMeshProUGUI pinsText;
+    [SerializeField] TMPro.TextMeshProUGUI plusText;
+    [SerializeField]TMPro.TextMeshProUGUI pinText;
+    [SerializeField]TMPro.TextMeshProUGUI timeText;
 
     [Header("Score")] 
     [SerializeField] int currentScore=0;
     [SerializeField] int highScore=0;
     protected float Timer;
-    protected float levelTimer = 0f;
-    private float gameOverTimer = 4.5f;
     public ScoreSaver scoreSaver;
     
     public List<GameObject> pins = new List<GameObject>();
@@ -30,35 +30,28 @@ public class GameManagerScript : MonoBehaviour
     private void Awake() 
     {
         Application.targetFrameRate = 60;
-        highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);   
+        highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);
         StartGame();
     }
 
     private void Update()
     {
-        if(gameOver)
+        if(gameOver && Input.anyKey)
         {
-            gameOverTimer -= Time.deltaTime;
-            
-            if(Input.anyKey && gameOverTimer <= 0)
-                SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
         Timer += Time.deltaTime;
-        levelTimer += Time.deltaTime;
-
+        double timeCon =Convert.ToDouble(Timer*1000);
+        TimeSpan time = TimeSpan.FromMilliseconds(timeCon);
+        string displayTime = time.ToString("ss':'ff");
+        timeText.SetText(displayTime);
 		if (Timer >= 1)
 		{
 			Timer = 0f;
 			currentScore= currentScore+pins.Count;
             scoreText.SetText("SCORE: "+ currentScore.ToString());
-            pinsText.SetText("+"+pins.Count.ToString());
+            plusText.SetText("+"+pins.Count.ToString());
 		}
-
-        if(levelTimer >= 10)
-        {
-            ballSpawner.LevelUp();
-            levelTimer = 0f;
-        }
     }
 
     public void PinDown(GameObject pin)
@@ -90,7 +83,7 @@ public class GameManagerScript : MonoBehaviour
         if(currentScore>scoreSaver.highScore)
         {
             scoreSaver.highScore= currentScore;
-            highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);         
+            highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);       
         }
     } 
 }
