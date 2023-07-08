@@ -10,6 +10,14 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] BallSpawnerScript ballSpawner;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] AudioSource pinSfx;
+
+    [Header("UI")] 
+    [SerializeField] TMPro.TextMeshProUGUI scoreText;
+    [SerializeField] TMPro.TextMeshProUGUI pinsText;
+
+    [Header("")] 
+    [SerializeField] int score=0;
+    
     public List<GameObject> pins = new List<GameObject>();
     private bool gameOver = false;
 
@@ -25,6 +33,10 @@ public class GameManagerScript : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        //update ui
+        pinsText.text = pins.Count.ToString();
+        scoreText.text = score.ToString();
     }
 
     public void PinDown(GameObject pin)

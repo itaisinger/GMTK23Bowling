@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class BallSpawnerScript : MonoBehaviour
 {
-    [SerializeField] GameObject ballPrefab;
+    [SerializeField] List<GameObject> ballPrefabs = new List<GameObject>();
     [SerializeField] Transform startPos;
     [SerializeField] float minForce = 20;
     [SerializeField] float maxForce = 100;
     [SerializeField] float cooldownRemain = 2f;
     [SerializeField] float cooldownMax = 2f;
+    [SerializeField] float startCooldown = 4f;
+    [SerializeField] int level = 1;
 
     float baseMin;
     float baseMax;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        cooldownRemain = startCooldown;
         baseMin = minForce;
         baseMax = maxForce;
     }
@@ -43,8 +46,14 @@ public class BallSpawnerScript : MonoBehaviour
 
     public void Reset()
     {
+        level = 1;
         minForce = baseMin;
         maxForce = baseMax;
         cooldownRemain = cooldownMax;
+    }
+
+    public void LevelUp()
+    {
+    
     }
 }

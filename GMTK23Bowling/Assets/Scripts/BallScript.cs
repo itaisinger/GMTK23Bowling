@@ -7,12 +7,11 @@ public class BallScript : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float angleRadians;
     [SerializeField] float angleDegrees;
-    [SerializeField] float minForce = 20;
-    [SerializeField] float maxForce = 100;
+    [SerializeField] float forceMult = 1;
     [SerializeField] float minAngle = 0;
     [SerializeField] float maxAngle = 360;
-    [SerializeField] float bounceCooldown = 0f;
-    [SerializeField] float bounceCooldownMax = 0.1f;
+    float bounceCooldown = 0f;
+    float bounceCooldownMax = 0.1f;
     [SerializeField] Transform startPos;
     [SerializeField] AudioSource bounceSfx;
     [SerializeField] Transform shadowTransform;
