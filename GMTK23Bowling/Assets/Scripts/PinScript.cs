@@ -57,6 +57,13 @@ public class PinScript : MonoBehaviour
       {
           gameManagerScript.PinDown(this.gameObject);
           Instantiate(explosionFX,transform.position,explosionFX.transform.rotation);
+
+          //make sure im not in the collisions
+          MouseContoller mc = GameObject.FindWithTag("Player").GetComponent<MouseContoller>();
+          
+          if(mc.collisions.ContainsKey(gameObject))
+            mc.collisions.Remove(gameObject);
+
           Destroy(this.gameObject);
       } 
     }

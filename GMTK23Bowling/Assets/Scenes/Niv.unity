@@ -3235,6 +3235,14 @@ PrefabInstance:
       propertyPath: startPos
       value: 
       objectReference: {fileID: 272578166}
+    - target: {fileID: 655742063143256221, guid: dd22b7148b687be4480920b8a39b871c, type: 3}
+      propertyPath: ballPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 9139329938891337848, guid: aaf9ca997a2927040812c16a8993b4c4, type: 3}
+    - target: {fileID: 655742063143256221, guid: dd22b7148b687be4480920b8a39b871c, type: 3}
+      propertyPath: ballPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 9139329938891337848, guid: 2c40e7bff9ddad340bfac3a5ebee413e, type: 3}
     - target: {fileID: 655742063143256222, guid: dd22b7148b687be4480920b8a39b871c, type: 3}
       propertyPath: m_RootOrder
       value: 2

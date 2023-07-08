@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseContoller : MonoBehaviour
 {
-    [SerializeField] Dictionary<GameObject,bool> collisions = new Dictionary<GameObject, bool>();     
+    [SerializeField] public Dictionary<GameObject,bool> collisions = new Dictionary<GameObject, bool>();     
     Animation anim;
 
     void Awake()

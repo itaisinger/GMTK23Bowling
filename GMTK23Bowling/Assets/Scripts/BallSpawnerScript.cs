@@ -66,9 +66,9 @@ public class BallSpawnerScript : MonoBehaviour
         switch(level)
         {
             case 0: angleRange += 30;               break;
-            case 1: maxForce += 3; minForce -= 5f;  break;
-            case 2: cooldownMax *= 0.6f;            break;
-            case 3: spawnVariety++;                 break;
+            case 1: spawnVariety++;                 break;
+            case 2: maxForce += 3; minForce -= 5f;  break;
+            case 3: cooldownMax *= 0.6f;            break;
             case 4: maxForce += 5;  minForce += 3;  break;
             case 5: spawnVariety++;                 break;
             case 6: angleRange += 30;               break;

@@ -46,12 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefabs:
   - {fileID: 3171795990870646342, guid: 7201cabdcf6725c40848a8030f7450d1, type: 3}
-  - {fileID: 9139329938891337848, guid: 2c40e7bff9ddad340bfac3a5ebee413e, type: 3}
   - {fileID: 9139329938891337848, guid: aaf9ca997a2927040812c16a8993b4c4, type: 3}
+  - {fileID: 9139329938891337848, guid: 2c40e7bff9ddad340bfac3a5ebee413e, type: 3}
   startPos: {fileID: 0}
+  cooldownRemain: 2
+  startCooldown: 4
+  level: 0
+  angleRange: 0
+  spawnVariety: 1
+  cooldownMax: 4
   minForce: 5
   maxForce: 10
-  cooldownRemain: 2
-  cooldownMax: 4
-  startCooldown: 4
-  level: 1
