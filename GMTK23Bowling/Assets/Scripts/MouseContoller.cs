@@ -32,6 +32,7 @@ public class MouseContoller : MonoBehaviour
     //push called from the animation event
     public void Push()
     {
+        GetComponent<AudioSource>().Play();
         foreach (var pin in collisions)
         {
             Vector3 pinPos = pin.Key.transform.position;
@@ -47,7 +48,6 @@ public class MouseContoller : MonoBehaviour
             float dirRadians = dirDegrees * Mathf.Deg2Rad;
             Vector2 vec = disMult * pinScript.force * new Vector2(Mathf.Sin(dirRadians), Mathf.Cos(dirRadians));
             pinBody.AddForce(vec);
-            
         }
     }
 
