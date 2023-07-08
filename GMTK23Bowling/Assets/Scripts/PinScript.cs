@@ -51,7 +51,7 @@ public class PinScript : MonoBehaviour
       }  
       if(other.gameObject.CompareTag("Ball"))
       {
-          gameManagerScript.PinDown();
+          gameManagerScript.PinDown(this.gameObject);
           Destroy(this.gameObject);
       }  
     }
@@ -61,7 +61,7 @@ public class PinScript : MonoBehaviour
     {
       if(other.gameObject.CompareTag("Ball"))
       {
-          gameManagerScript.PinDown();
+          gameManagerScript.PinDown(this.gameObject);
           Destroy(this.gameObject);
       }
         

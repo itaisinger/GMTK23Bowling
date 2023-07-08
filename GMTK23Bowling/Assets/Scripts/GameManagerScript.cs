@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] BallSpawnerScript ballSpawner;
     [SerializeField] int pinsRemainNum = 11;
     [SerializeField]GameObject panel;
+    public List<GameObject> pins = new List<GameObject>();
 
-
+private void Awake() {
+    Application.targetFrameRate = 60;
+}
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +28,15 @@ public class GameManagerScript : MonoBehaviour
         {
             if(Input.anyKey)
             {
-                Debug.Log("Reload Scene");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }
 
-    public void PinDown()
+    public void PinDown(GameObject pin)
     {
-        pinsRemainNum--;
-        if(pinsRemainNum <= 0)
+        pins.Remove(pin);
+        if(pins.Count <= 0)
             GameOver();
     }
 
@@ -44,6 +48,7 @@ public class GameManagerScript : MonoBehaviour
         {
             var pin = Instantiate(pinPrefab);
             pin.transform.position = pinStartingPositions[i].position;
+            pins.Add(pin);
         }
     }
 
