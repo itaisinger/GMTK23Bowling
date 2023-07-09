@@ -34,6 +34,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void Awake() 
     {
+        gameOverTimer = 4.5f;
         Application.targetFrameRate = 60;
         highScoreText.SetText("HIGH SCORE: " + scoreSaver.highScore);
         StartGame();
@@ -106,7 +107,7 @@ public class GameManagerScript : MonoBehaviour
         gameOverPanel.GetComponent<Animation>().Play("Lost");
         if(currentScore>scoreSaver.highScore)
         {
-            scoreSaver.highScore= currentScore;
+            scoreSaver.highScore=currentScore;
             highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);
             highScoreText2.enabled= true;
             highScoreText2.SetText("you got new high score: "+scoreSaver.highScore);        
