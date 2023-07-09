@@ -14,6 +14,7 @@ public class GameManagerScript : MonoBehaviour
     [Header("UI")] 
     [SerializeField] TMPro.TextMeshProUGUI scoreText;
     [SerializeField] TMPro.TextMeshProUGUI highScoreText;
+    [SerializeField] TMPro.TextMeshProUGUI highScoreText2;
     [SerializeField] TMPro.TextMeshProUGUI plusText;
     [SerializeField]TMPro.TextMeshProUGUI pinText;
     [SerializeField]TMPro.TextMeshProUGUI timeText;
@@ -106,7 +107,9 @@ public class GameManagerScript : MonoBehaviour
         if(currentScore>scoreSaver.highScore)
         {
             scoreSaver.highScore= currentScore;
-            highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);       
+            highScoreText.SetText("HIGH SCORE: "+scoreSaver.highScore);
+            highScoreText2.enabled= true;
+            highScoreText2.SetText("you got new high score: "+scoreSaver.highScore);        
         }
     } 
 }
