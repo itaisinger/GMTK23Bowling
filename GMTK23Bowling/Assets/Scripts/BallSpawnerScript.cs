@@ -31,8 +31,8 @@ public class BallSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-            LevelUp();
+        // if(Input.GetKeyDown(KeyCode.Space))
+        //     LevelUp();
 
         cooldownRemain -= Time.deltaTime;
         if(cooldownRemain <= 0)
